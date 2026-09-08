@@ -3,299 +3,375 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#080b10"/>
+  <meta name="description" content="Live Binance market intelligence, unlocked through on-chain x402 payments."/>
   <title>Agent Invoice — Binance Agent OS</title>
   <link rel="stylesheet" href="style.css"/>
   <!-- ethers.js v6 browser bundle for MetaMask interaction -->
   <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <span class="logo-icon">⚡</span>
-      <span class="logo-name">Agent Invoice</span>
-      <span class="logo-tag">Binance Agent OS</span>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">AI</span>
+      <div class="brand-copy">
+        <span class="brand-name">Agent Invoice</span>
+        <span class="brand-meta">Autonomous market intelligence</span>
+      </div>
+      <span class="brand-network">Binance Agent OS</span>
     </div>
+
     <div class="header-right">
-      <!-- Wallet Connect Button -->
       <div class="wallet-area" id="wallet-area">
-        <button class="wallet-connect-btn" id="wallet-btn" onclick="connectWallet()">
-          <span class="mm-icon">&#x1F98A;</span> Connect Wallet
+        <button class="wallet-connect-btn" id="wallet-btn" type="button" onclick="connectWallet()">
+          <span class="mm-icon" aria-hidden="true">◈</span>
+          <span>Connect Wallet</span>
         </button>
       </div>
-      <div class="status-badge">
+      <div class="status-badge" aria-live="polite">
         <span class="status-dot" id="status-dot"></span>
         <span id="status-text">Connecting…</span>
       </div>
     </div>
   </header>
 
-  <nav class="tabs">
-    <button class="tab active" data-tab="analyzer">Analyzer</button>
-    <button class="tab" data-tab="wallet">Wallet</button>
-    <button class="tab" data-tab="activity">Activity Log</button>
+  <nav class="tabs" aria-label="Primary navigation">
+    <button class="tab active" type="button" data-tab="analyzer">
+      <span class="tab-icon" aria-hidden="true">⌁</span>
+      <span>Analyzer</span>
+    </button>
+    <button class="tab" type="button" data-tab="wallet">
+      <span class="tab-icon" aria-hidden="true">◇</span>
+      <span>Wallet</span>
+    </button>
+    <button class="tab" type="button" data-tab="activity">
+      <span class="tab-icon" aria-hidden="true">≡</span>
+      <span>Activity Log</span>
+    </button>
   </nav>
 
-  <!-- ══ ANALYZER TAB ══ -->
-  <div class="tab-content active" id="tab-analyzer">
+  <!-- ANALYZER TAB -->
+  <main class="tab-content active" id="tab-analyzer">
+    <aside class="panel request-panel" id="request-panel">
+      <div class="panel-kicker"><span></span> Market intelligence</div>
+      <h1>Request analysis</h1>
+      <p class="panel-sub">Choose a market for a live, multi-signal BUY / HOLD / EXIT report from Binance data.</p>
 
-    <!-- Step 1: Request -->
-    <div class="panel" id="request-panel">
-      <h2>Request Analysis</h2>
-      <p class="panel-sub">Agent pulls live data from Binance, generates a BUY/HOLD/EXIT verdict, then requests 0.01 USDC via your connected wallet.</p>
-      <div class="quick-tokens">
-        <button class="token-btn active" data-symbol="ETHUSDT">ETH</button>
-        <button class="token-btn" data-symbol="BTCUSDT">BTC</button>
-        <button class="token-btn" data-symbol="BNBUSDT">BNB</button>
-        <button class="token-btn" data-symbol="SOLUSDT">SOL</button>
-        <button class="token-btn" data-symbol="ADAUSDT">ADA</button>
-        <button class="token-btn" data-symbol="XRPUSDT">XRP</button>
-        <button class="token-btn" data-symbol="DOGEUSDT">DOGE</button>
-        <button class="token-btn" data-symbol="AVAXUSDT">AVAX</button>
-        <button class="token-btn" data-symbol="LINKUSDT">LINK</button>
-        <button class="token-btn" data-symbol="SUIUSDT">SUI</button>
-        <button class="token-btn" data-symbol="PEPEUSDT">PEPE</button>
+      <div class="control-block">
+        <div class="control-label">
+          <span>Popular markets</span>
+          <span class="control-hint">USDT pairs</span>
+        </div>
+        <div class="quick-tokens" aria-label="Popular markets">
+          <button class="token-btn active" type="button" data-symbol="ETHUSDT">ETH</button>
+          <button class="token-btn" type="button" data-symbol="BTCUSDT">BTC</button>
+          <button class="token-btn" type="button" data-symbol="BNBUSDT">BNB</button>
+          <button class="token-btn" type="button" data-symbol="SOLUSDT">SOL</button>
+          <button class="token-btn" type="button" data-symbol="ADAUSDT">ADA</button>
+          <button class="token-btn" type="button" data-symbol="XRPUSDT">XRP</button>
+          <button class="token-btn" type="button" data-symbol="DOGEUSDT">DOGE</button>
+          <button class="token-btn" type="button" data-symbol="AVAXUSDT">AVAX</button>
+          <button class="token-btn" type="button" data-symbol="LINKUSDT">LINK</button>
+          <button class="token-btn" type="button" data-symbol="SUIUSDT">SUI</button>
+          <button class="token-btn" type="button" data-symbol="PEPEUSDT">PEPE</button>
+        </div>
       </div>
+
       <div class="field-row">
-        <label>Token Symbol</label>
-        <input type="text" id="symbol-input" value="ETHUSDT" placeholder="e.g. ETHUSDT"/>
+        <label for="symbol-input">Token symbol</label>
+        <div class="input-shell">
+          <span class="input-dot" aria-hidden="true"></span>
+          <input type="text" id="symbol-input" value="ETHUSDT" placeholder="e.g. ETHUSDT" autocomplete="off" spellcheck="false"/>
+          <span class="input-suffix">SPOT</span>
+        </div>
       </div>
 
-      <div class="button-group" style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
-        <button class="btn-primary" id="analyze-btn" onclick="requestAnalysis()" style="padding: 14px; font-size: 14px;">
-          ⚡ Request Report — 0.01 USDC
+      <div class="button-group">
+        <button class="btn-primary request-action" id="analyze-btn" type="button" onclick="requestAnalysis()">
+          <span aria-hidden="true">↗</span> Request Report — 0.01 USDC
         </button>
-        <button class="btn-primary" id="live-request-btn" onclick="requestLiveMode()" style="padding: 14px; font-size: 14px; background:var(--bg-lighter); color:var(--accent); border:1px solid var(--accent);">
-          🔴 Unlock Live Mode — 0.05 USDC
+        <button class="btn-live" id="live-request-btn" type="button" onclick="requestLiveMode()">
+          <span class="live-dot"></span> Unlock Live Mode — 0.05 USDC
         </button>
       </div>
 
-    </div>
-
-    <!-- Right Column Panels -->
-    <div class="right-panels">
-    <!-- Step 2: Payment (hidden until analysis runs) -->
-    <div class="panel hidden" id="invoice-panel">
-      <div class="invoice-header">
-        <div>
-          <h2>💳 Invoice — HTTP 402</h2>
-          <p class="panel-sub" id="inv-desc">Your analysis is ready. Pay 0.01 USDC to unlock the full report.</p>
-        </div>
-        <div class="invoice-timer-box">
-          <div class="timer-label">Expires in</div>
-          <div class="countdown" id="inv-countdown">05:00</div>
-        </div>
+      <div class="request-footer">
+        <div><span class="request-footer-icon">01</span><span>Live market data</span></div>
+        <div><span class="request-footer-icon">02</span><span>On-chain settlement</span></div>
+        <div><span class="request-footer-icon">03</span><span>Instant unlock</span></div>
       </div>
+    </aside>
 
-      <!-- Amount + recipient -->
-      <div class="inv-amount-row">
-        <div class="inv-amount-big">
-          <span class="inv-amount-num" id="inv-amount">0.01</span>
-          <span class="inv-amount-cur">USDC</span>
-        </div>
-        <div class="inv-recipient">
-          <span class="inv-label">Pay to</span>
-          <span class="mono" id="inv-recipient">—</span>
-          <button class="copy-btn" onclick="copyText('inv-recipient')">Copy</button>
-        </div>
-      </div>
+    <section class="right-panels" aria-label="Analysis workspace">
+      <section class="workspace-welcome">
+        <div class="welcome-grid" aria-hidden="true"></div>
+        <div class="welcome-copy">
+          <div class="panel-kicker"><span></span> System ready</div>
+          <h2>Live signals.<br/><em>Settled on-chain.</em></h2>
+          <p>Select a market to generate a current technical read. The report stays private until its x402 invoice is settled.</p>
 
-      <!-- Chain selector -->
-      <div class="chain-section">
-        <div class="chain-label">Select payment chain</div>
-        <div class="chain-grid" id="chain-grid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-
-      <!-- Sleek x402 Protocol Showcase -->
-      <div class="x402-box sleek-x402">
-        <div class="x402-row">
-          <div class="x402-title" style="margin:0; font-size:11px; padding-right:16px; font-weight:bold; border-right:1px solid var(--border);">&#x26A1; B402 SETTLEMENT</div>
-          <div class="x402-marquee" style="font-size:12px; color:var(--text2); display:flex; align-items:center; gap:12px; padding-left:16px; flex-wrap:wrap; line-height:1.6;">
-            <span><b class="accent">1.</b> Data Analyzed</span> <span style="opacity:0.3">→</span>
-            <span><b class="accent">2.</b> Invoice Issued</span> <span style="opacity:0.3">→</span>
-            <span><b class="accent">3.</b> <span id="x402-step-3">You Pay USDC on-chain</span></span> <span style="opacity:0.3">→</span>
-            <span><b class="accent">4.</b> Agent Verifies</span> <span style="opacity:0.3">→</span>
-            <span><b class="green">5.</b> Dashboard Unlocked</span>
+          <div class="workflow-preview">
+            <div class="workflow-node">
+              <span class="workflow-index">01</span>
+              <div><strong>Observe</strong><small>Binance market depth</small></div>
+            </div>
+            <span class="workflow-line" aria-hidden="true"></span>
+            <div class="workflow-node">
+              <span class="workflow-index">02</span>
+              <div><strong>Analyze</strong><small>Seven independent signals</small></div>
+            </div>
+            <span class="workflow-line" aria-hidden="true"></span>
+            <div class="workflow-node">
+              <span class="workflow-index">03</span>
+              <div><strong>Unlock</strong><small>Verified USDC payment</small></div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Pay actions -->
-      <div id="pay-actions">
-        <!-- Default State: Ready to pay -->
-        <div class="pay-state" id="state-ready">
-          <button class="btn-primary w-full pulse-btn" id="pay-usdc-btn" onclick="payWithWallet()">⚡ Pay 0.01 USDC</button>
+        <div class="market-orbit" aria-hidden="true">
+          <span class="orbit orbit-one"></span>
+          <span class="orbit orbit-two"></span>
+          <span class="orbit-center">x402</span>
+          <span class="orbit-node node-one"></span>
+          <span class="orbit-node node-two"></span>
+          <span class="orbit-node node-three"></span>
         </div>
-        
-        <!-- STATE: Awaiting MetaMask -->
-        <div class="pay-state hidden" id="state-awaiting-mm">
-          <div class="pending-box">
-            <div class="spinner"></div>
-            <div>
-              <div class="pending-title">Check MetaMask</div>
-              <div class="pending-sub">Confirm the USDC transfer in your wallet popup...</div>
+      </section>
+
+      <!-- PAYMENT PANEL -->
+      <section class="panel hidden" id="invoice-panel">
+        <div class="invoice-header">
+          <div>
+            <div class="panel-kicker"><span></span> HTTP 402 · Payment required</div>
+            <h2>Analysis invoice</h2>
+            <p class="panel-sub" id="inv-desc">Your analysis is ready. Pay 0.01 USDC to unlock the full report.</p>
+          </div>
+          <div class="invoice-timer-box">
+            <span class="timer-label">Expires in</span>
+            <strong class="countdown" id="inv-countdown">05:00</strong>
+          </div>
+        </div>
+
+        <div class="inv-amount-row">
+          <div class="inv-amount-big">
+            <span class="inv-label">Amount due</span>
+            <div><span class="inv-amount-num" id="inv-amount">0.01</span><span class="inv-amount-cur">USDC</span></div>
+          </div>
+          <div class="inv-recipient">
+            <span class="inv-label">Recipient</span>
+            <div class="recipient-value">
+              <span class="mono" id="inv-recipient">—</span>
+              <button class="copy-btn" type="button" onclick="copyText('inv-recipient')">Copy</button>
             </div>
           </div>
         </div>
 
-        <!-- STATE: Tx submitted, waiting for confirmation -->
-        <div class="pay-state hidden" id="state-pending">
-          <div class="pending-box">
-            <div class="spinner"></div>
-            <div>
-              <div class="pending-title">Confirming on-chain...</div>
-              <div class="pending-sub">
-                Tx: <a class="tx-link" id="pending-tx-link" href="#" target="_blank" rel="noopener"></a>
+        <div class="chain-section">
+          <div class="chain-label-row">
+            <span class="chain-label">Select payment chain</span>
+            <span class="chain-help">USDC supported</span>
+          </div>
+          <div class="chain-grid" id="chain-grid"><!-- Populated by app.js --></div>
+        </div>
+
+        <div class="x402-box sleek-x402">
+          <div class="x402-title">B402 settlement</div>
+          <div class="x402-marquee">
+            <span><b>01</b> Data analyzed</span>
+            <i aria-hidden="true"></i>
+            <span><b>02</b> Invoice issued</span>
+            <i aria-hidden="true"></i>
+            <span><b>03</b> <span id="x402-step-3">You pay USDC on-chain</span></span>
+            <i aria-hidden="true"></i>
+            <span><b>04</b> Agent verifies</span>
+            <i aria-hidden="true"></i>
+            <span><b>05</b> Report unlocked</span>
+          </div>
+        </div>
+
+        <div id="pay-actions">
+          <div class="pay-state hidden" id="state-no-metamask">
+            <div class="no-wallet-msg">
+              <span class="warn-icon" aria-hidden="true">!</span>
+              <div><strong>MetaMask is not installed</strong><span>Install it to pay directly, or use the manual option below.</span></div>
+            </div>
+            <button class="metamask-pay-btn" type="button" onclick="connectWallet()">Install MetaMask</button>
+          </div>
+
+          <div class="pay-state hidden" id="state-connect">
+            <div class="no-wallet-msg connect-wallet-msg">
+              <span class="wallet-glyph" aria-hidden="true">◇</span>
+              <div><strong>Connect a wallet to continue</strong><span>Your wallet stays in your control. Only the payment transaction is requested.</span></div>
+            </div>
+            <button class="metamask-pay-btn" type="button" onclick="connectWallet()">Connect MetaMask</button>
+          </div>
+
+          <div class="pay-state" id="state-ready">
+            <div class="connected-wallet-bar">
+              <span class="wallet-dot"></span>
+              <div><span class="wallet-addr-short" id="wallet-short">Wallet connected</span><small id="connected-chain-name">BNB Chain</small></div>
+              <span class="secure-label">Ready</span>
+            </div>
+            <button class="btn-primary pulse-btn" id="pay-usdc-btn" type="button" onclick="payWithWallet()">Pay 0.01 USDC</button>
+          </div>
+
+          <div class="pay-state hidden" id="state-awaiting-mm">
+            <div class="pending-box">
+              <div class="spinner"></div>
+              <div><div class="pending-title">Check MetaMask</div><div class="pending-sub">Confirm the USDC transfer in your wallet popup.</div></div>
+            </div>
+          </div>
+
+          <div class="pay-state hidden" id="state-pending">
+            <div class="pending-box">
+              <div class="spinner"></div>
+              <div>
+                <div class="pending-title">Confirming on-chain</div>
+                <div class="pending-sub">Transaction: <a class="tx-link" id="pending-tx-link" href="#" target="_blank" rel="noopener"></a></div>
+                <div class="pending-sub">Waiting for one block confirmation. Usually 5–15 seconds.</div>
               </div>
-              <div class="pending-sub">Waiting for 1 block confirmation. Usually ~5-15 seconds.</div>
             </div>
           </div>
-        </div>
 
-        <!-- STATE: Verifying server-side -->
-        <div class="pay-state hidden" id="state-verifying">
-          <div class="pending-box">
-            <div class="spinner"></div>
-            <div>
-              <div class="pending-title">Verifying payment...</div>
-              <div class="pending-sub">Agent is checking the USDC Transfer event on-chain.</div>
+          <div class="pay-state hidden" id="state-verifying">
+            <div class="pending-box">
+              <div class="spinner"></div>
+              <div><div class="pending-title">Verifying payment</div><div class="pending-sub">The agent is checking the USDC transfer event on-chain.</div></div>
             </div>
           </div>
-        </div>
 
-        <!-- STATE: Error -->
-        <div class="pay-state hidden" id="state-error">
-          <div class="error-box">
-            <span class="error-icon">❌</span>
-            <div>
-              <div class="error-title" id="error-title">Payment failed</div>
-              <div class="error-detail" id="error-detail"></div>
+          <div class="pay-state hidden" id="state-error">
+            <div class="error-box">
+              <span class="error-icon" aria-hidden="true">!</span>
+              <div><div class="error-title" id="error-title">Payment failed</div><div class="error-detail" id="error-detail"></div></div>
             </div>
+            <button class="btn-secondary mt-8" type="button" onclick="retryPayment()">Retry payment</button>
           </div>
-          <button class="btn-secondary mt-8" onclick="retryPayment()">Retry Payment</button>
         </div>
 
-      </div><!-- /pay-area -->
-
-      <!-- Manual fallback (collapsed) -->
-      <details class="manual-fallback" id="manual-fallback">
-        <summary>No MetaMask? Manual payment</summary>
-        <div class="manual-inner">
-          <p id="manual-pay-desc">Send exactly 0.01 USDC to the address above on your selected chain, then paste the tx hash:</p>
-          <div class="field-row">
-            <input type="text" id="txhash-input" placeholder="0x... your transaction hash"/>
+        <details class="manual-fallback" id="manual-fallback">
+          <summary>Pay manually with a transaction hash</summary>
+          <div class="manual-inner">
+            <p id="manual-pay-desc">Send exactly 0.01 USDC to the address above on your selected chain, then paste the transaction hash.</p>
+            <div class="field-row"><input type="text" id="txhash-input" placeholder="0x… transaction hash" autocomplete="off" spellcheck="false"/></div>
+            <button class="btn-secondary" type="button" onclick="submitManualPayment()">Submit transaction</button>
           </div>
-          <button class="btn-secondary" onclick="submitManualPayment()">Submit Manually</button>
+        </details>
+
+        <button class="cancel-link" type="button" onclick="cancelInvoice()">Cancel and request another</button>
+      </section>
+
+      <!-- REPORT PANEL -->
+      <section class="panel hidden" id="report-panel">
+        <div class="success-toast" id="success-toast"><span aria-hidden="true">✓</span> Payment verified. Report unlocked.</div>
+
+        <div id="verdict-banner" class="verdict-banner">
+          <div class="verdict-left">
+            <span class="verdict-label">Agent verdict</span>
+            <div class="verdict-text" id="verdict-text">BUY</div>
+            <div class="confidence-text" id="confidence-text"></div>
+            <div class="risk-badge" id="risk-badge"></div>
+          </div>
+          <div class="verdict-right"><div class="snapshot-grid" id="snapshot-grid"></div></div>
         </div>
-      </details>
 
-      <button class="cancel-link" onclick="cancelInvoice()">← Cancel, request another</button>
-    </div><!-- /invoice-panel -->
+        <div class="summary-narrative" id="summary-narrative"></div>
 
-    <!-- Step 3: Report (hidden until payment verified) -->
-    <div class="panel hidden" id="report-panel">
-
-      <!-- Success toast -->
-      <div class="success-toast" id="success-toast">
-        ✅ Payment verified — 0.01 USDC received. Report unlocked!
-      </div>
-
-      <div id="verdict-banner" class="verdict-banner">
-        <div class="verdict-left">
-          <div class="verdict-text" id="verdict-text">BUY</div>
-          <div class="confidence-text" id="confidence-text"></div>
-          <div class="risk-badge" id="risk-badge"></div>
+        <div class="section-heading">
+          <div><span class="section-index">01</span><h3 class="section-title">Signal breakdown</h3></div>
+          <span>Live market structure</span>
         </div>
-        <div class="verdict-right">
-          <div class="snapshot-grid" id="snapshot-grid"></div>
+        <div class="signals-grid" id="signals-grid"></div>
+
+        <div class="section-heading">
+          <div><span class="section-index">02</span><h3 class="section-title">Risk analysis</h3></div>
+          <span>Support and resistance</span>
         </div>
-      </div>
+        <div class="report-section" id="risk-section"></div>
 
-      <!-- Summary narrative — populated by app.js -->
-      <div class="summary-narrative" id="summary-narrative" style="display:none"></div>
+        <div class="disclaimer"><span aria-hidden="true">i</span> Algorithmic analysis only. Not financial advice. Data was live at the time of request.</div>
+        <button class="btn-secondary mt-16" type="button" onclick="resetAnalyzer()">Request another analysis</button>
+      </section>
 
-      <h3 class="section-title">Signal Breakdown</h3>
-      <div class="signals-grid" id="signals-grid"></div>
+      <!-- LIVE MODE PANEL -->
+      <section class="panel hidden" id="live-mode-panel">
+        <div class="live-header">
+          <div>
+            <div class="panel-kicker live-kicker"><span></span> Streaming</div>
+            <h2>Live market dashboard</h2>
+          </div>
+          <div class="live-timer-box"><span class="timer-label">Session ends</span><strong class="countdown" id="live-timer">15:00</strong></div>
+        </div>
 
-      <h3 class="section-title">Risk Analysis</h3>
-      <div class="report-section" id="risk-section"></div>
+        <div id="live-verdict-banner" class="verdict-banner">
+          <div class="verdict-left">
+            <span class="verdict-label">Live verdict</span>
+            <div class="verdict-text" id="live-verdict-text">LIVE</div>
+            <div class="confidence-text" id="live-confidence-text"></div>
+            <div class="risk-badge" id="live-risk-badge"></div>
+          </div>
+          <div class="verdict-right"><div class="snapshot-grid" id="live-snapshot-grid"></div></div>
+        </div>
 
-      <div class="disclaimer">⚠️ Not financial advice. Algorithmic analysis only. Data live at time of request.</div>
+        <div class="section-heading live-section-heading">
+          <div><span class="section-index">LIVE</span><h3 class="section-title">Signal breakdown</h3></div>
+          <span>Auto-updating every 10 seconds</span>
+        </div>
+        <div class="signals-grid" id="live-signals-grid"></div>
 
-      <button class="btn-secondary mt-16" onclick="resetAnalyzer()">← Request Another Analysis</button>
+        <div class="live-actions"><button class="btn-secondary" type="button" onclick="endLiveSession()">End live session</button></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- WALLET TAB -->
+  <main class="tab-content hidden" id="tab-wallet">
+    <div class="page-heading">
+      <div><span class="page-eyebrow">Agent treasury</span><h1>Wallet overview</h1><p>Track earned USDC and the agent’s path to its next BNB reinvestment.</p></div>
+      <span class="page-status"><i></i> Ledger synchronized</span>
     </div>
 
-  </div>
-
-  
-    <!-- Step 4: Live Mode -->
-    <div class="panel hidden" id="live-mode-panel">
-      <div class="live-header">
-        <div class="live-title-box">
-          <span class="live-dot pulse"></span>
-          <h2>Live Market Dashboard</h2>
-        </div>
-        <div class="live-timer-box">
-          <div class="timer-label">Session Ends</div>
-          <div class="countdown" id="live-timer">15:00</div>
-        </div>
-      </div>
-
-      <div id="live-verdict-banner" class="verdict-banner">
-        <div class="verdict-left">
-          <div class="verdict-text" id="live-verdict-text">LIVE</div>
-          <div class="confidence-text" id="live-confidence-text"></div>
-          <div class="risk-badge" id="live-risk-badge"></div>
-        </div>
-        <div class="verdict-right">
-          <div class="snapshot-grid" id="live-snapshot-grid"></div>
-        </div>
-      </div>
-      <h3 class="section-title" style="margin-top:20px;">Live Signal Breakdown <span style="color:var(--accent);font-size:12px;margin-left:10px;">(Auto-updating every 10s)</span></h3>
-      <div class="signals-grid" id="live-signals-grid"></div>
-
-      <div class="live-actions">
-        <button class="btn-secondary" onclick="endLiveSession()">End Session</button>
-      </div>
-    </div>
-    </div> <!-- End right-panels -->
-
-  <!-- ══ WALLET TAB ══ -->
-  <div class="tab-content hidden" id="tab-wallet">
-    <div class="panel">
-      <h2>Agent Earnings</h2>
-      <p class="panel-sub">Every paid analysis credits this wallet. When balance hits \$10 USDC, the agent auto-buys BNB on Binance Spot via MCP.</p>
+    <section class="panel wallet-overview-panel">
       <div class="wallet-stats">
-        <div class="stat-card"><div class="stat-value accent" id="w-balance">0.000000</div><div class="stat-label">USDC Balance</div></div>
-        <div class="stat-card"><div class="stat-value" id="w-total">0.000000</div><div class="stat-label">Total Earned</div></div>
-        <div class="stat-card"><div class="stat-value" id="w-txcount">0</div><div class="stat-label">Transactions</div></div>
-        <div class="stat-card"><div class="stat-value" id="w-reinvestcount">0</div><div class="stat-label">BNB Buys</div></div>
+        <div class="stat-card featured"><div class="stat-top"><span class="stat-label">USDC balance</span><span class="stat-icon">$</span></div><div class="stat-value accent" id="w-balance">0.000000</div><div class="stat-foot">Available to the agent</div></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-label">Total earned</span><span class="stat-icon">↗</span></div><div class="stat-value" id="w-total">0.000000</div><div class="stat-foot">Lifetime USDC revenue</div></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-label">Transactions</span><span class="stat-icon">≡</span></div><div class="stat-value" id="w-txcount">0</div><div class="stat-foot">Verified settlements</div></div>
+        <div class="stat-card"><div class="stat-top"><span class="stat-label">BNB buys</span><span class="stat-icon">◇</span></div><div class="stat-value" id="w-reinvestcount">0</div><div class="stat-foot">Automatic reinvestments</div></div>
       </div>
-      <div class="reinvest-progress">
-        <div class="progress-label"><span>BNB Reinvestment Progress</span><span id="w-progress">0.0%</span></div>
-        <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-        <div class="progress-sub">Auto-buys BNB via <code>bn_place_order</code> when balance reaches \$10 USDC</div>
-      </div>
-    </div>
-    <div class="panel">
-      <h2>Transaction Ledger</h2>
-      <div id="tx-ledger"><p class="empty-msg">No transactions yet.</p></div>
-    </div>
-    <div class="panel">
-      <h2>Reinvestment History</h2>
-      <div id="reinvest-history"><p class="empty-msg">No reinvestments yet. Agent auto-buys BNB when balance hits \$10.</p></div>
-    </div>
-  </div>
 
-  <!-- ══ ACTIVITY TAB ══ -->
-  <div class="tab-content hidden" id="tab-activity">
-    <div class="panel">
-      <h2>Agent Activity Log</h2>
-      <p class="panel-sub">Real-time log of every agent action — MCP calls, payment verifications, and reinvestments.</p>
-      <div id="activity-log" class="log-container"><p class="empty-msg">Waiting for activity…</p></div>
+      <div class="reinvest-progress">
+        <div class="progress-label"><div><strong>BNB reinvestment progress</strong><span>Next automatic purchase</span></div><strong id="w-progress">0.0%</strong></div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-sub">The agent calls <code>bn_place_order</code> when its balance reaches $10 USDC.</div>
+      </div>
+    </section>
+
+    <div class="wallet-grid">
+      <section class="panel">
+        <div class="compact-panel-heading"><div><span class="page-eyebrow">Cash flow</span><h2>Transaction ledger</h2></div><span>Latest 10</span></div>
+        <div id="tx-ledger"><p class="empty-msg">No transactions yet.</p></div>
+      </section>
+      <section class="panel">
+        <div class="compact-panel-heading"><div><span class="page-eyebrow">Capital cycle</span><h2>Reinvestment history</h2></div><span>Latest 5</span></div>
+        <div id="reinvest-history"><p class="empty-msg">No reinvestments yet. The agent auto-buys BNB when the balance reaches $10.</p></div>
+      </section>
     </div>
-  </div>
+  </main>
+
+  <!-- ACTIVITY TAB -->
+  <main class="tab-content hidden" id="tab-activity">
+    <div class="page-heading">
+      <div><span class="page-eyebrow">Runtime telemetry</span><h1>Agent activity</h1><p>A live audit trail of market calls, payment verification, and reinvestment actions.</p></div>
+      <span class="page-status"><i></i> Auto-refreshing</span>
+    </div>
+    <section class="panel activity-panel">
+      <div class="terminal-bar">
+        <div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span>agent-invoice / runtime</span>
+        <span class="terminal-live"><i></i> live</span>
+      </div>
+      <div id="activity-log" class="log-container"><p class="empty-msg">Waiting for activity…</p></div>
+    </section>
+  </main>
 
   <script src="app.js"></script>
 </body>

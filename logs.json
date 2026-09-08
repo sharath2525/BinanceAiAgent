@@ -1,5 +1,185 @@
 [
   {
+    "time": "2026-09-08T19:33:05.044Z",
+    "msg": "Live Mode WS disconnected — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
+  },
+  {
+    "time": "2026-09-08T19:32:56.931Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:32:56.722Z",
+    "msg": "Live Mode WS disconnected — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
+  },
+  {
+    "time": "2026-09-08T19:28:12.392Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:28:12.271Z",
+    "msg": "Live Mode WS disconnected — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
+  },
+  {
+    "time": "2026-09-08T19:27:19.754Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:27:19.638Z",
+    "msg": "Live Mode WS disconnected — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
+  },
+  {
+    "time": "2026-09-08T19:26:11.768Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:26:11.760Z",
+    "msg": "Live Mode session created — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
+  },
+  {
+    "time": "2026-09-08T19:26:11.756Z",
+    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:26:11.067Z",
+    "msg": "Live Mode payment submitted — requestId: 186570ff-35c2-4c54-91cb-ea07a9962361 — tx: 0x072285fb8dc23c0a5f4ada357ef3ba75693b09b4bf94b5dd83748fdce011d7d5"
+  },
+  {
+    "time": "2026-09-08T19:26:02.127Z",
+    "msg": "HTTP 402 issued for Live Mode — requestId: 186570ff-35c2-4c54-91cb-ea07a9962361 — price: 0.05 USDC"
+  },
+  {
+    "time": "2026-09-08T19:26:02.127Z",
+    "msg": "Live Mode requested — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:25:59.063Z",
+    "msg": "HTTP 402 issued — requestId: e026113c-6c67-419a-93d4-0d6118355f75 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:25:59.063Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
+  },
+  {
+    "time": "2026-09-08T19:25:58.580Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:25:58.580Z",
+    "msg": "Task received: analyze ETHUSDT for client anonymous"
+  },
+  {
+    "time": "2026-09-08T19:25:49.091Z",
+    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:25:48.193Z",
+    "msg": "Payment submitted for requestId: f9d94778-2206-4399-afc1-3b86aee9e12b — tx: 0xce9cb0e012ddd7f9f7a833af5b6cf67589cfef74a2a09d18bb58c6819e2756f4 on chain: bsc"
+  },
+  {
+    "time": "2026-09-08T19:25:36.385Z",
+    "msg": "HTTP 402 issued — requestId: f9d94778-2206-4399-afc1-3b86aee9e12b — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:25:36.383Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (50%)"
+  },
+  {
+    "time": "2026-09-08T19:25:36.027Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:25:36.027Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:24:39.326Z",
+    "msg": "HTTP 402 issued — requestId: cc34542a-a9c1-4fc5-88e4-f0758f53d0dc — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:24:39.324Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
+  },
+  {
+    "time": "2026-09-08T19:24:38.579Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:24:38.575Z",
+    "msg": "Task received: analyze ETHUSDT for client anonymous"
+  },
+  {
+    "time": "2026-09-08T18:46:17.763Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:46:17.622Z",
+    "msg": "Live Mode WS disconnected — token: 9b2e1259-7c1f-48e1-a87c-b782fe7b103b"
+  },
+  {
+    "time": "2026-09-08T18:46:15.696Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:46:15.460Z",
+    "msg": "Live Mode WS disconnected — token: 9b2e1259-7c1f-48e1-a87c-b782fe7b103b"
+  },
+  {
+    "time": "2026-09-08T18:43:35.835Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:43:35.829Z",
+    "msg": "Live Mode session created — token: 9b2e1259-7c1f-48e1-a87c-b782fe7b103b"
+  },
+  {
+    "time": "2026-09-08T18:43:35.827Z",
+    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:43:35.358Z",
+    "msg": "Live Mode payment submitted — requestId: 4bf64b50-35e6-4578-b697-0c36cd65ad98 — tx: 0x8927fa0387068bc2abd90db0094d80ec7c90bf25cad5cd8bbce330052266f87e"
+  },
+  {
+    "time": "2026-09-08T18:43:21.194Z",
+    "msg": "HTTP 402 issued for Live Mode — requestId: 4bf64b50-35e6-4578-b697-0c36cd65ad98 — price: 0.05 USDC"
+  },
+  {
+    "time": "2026-09-08T18:43:21.194Z",
+    "msg": "Live Mode requested — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:43:11.193Z",
+    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T18:43:10.508Z",
+    "msg": "Payment submitted for requestId: 1c5dc313-09c5-4c10-a544-8d86048c10f1 — tx: 0xc63850eefd3d882e7152343aa2d6d8096cc33992a73b05dd520d9c98a359aae8 on chain: bsc"
+  },
+  {
+    "time": "2026-09-08T18:42:56.319Z",
+    "msg": "HTTP 402 issued — requestId: 1c5dc313-09c5-4c10-a544-8d86048c10f1 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T18:42:56.318Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (40%)"
+  },
+  {
+    "time": "2026-09-08T18:42:55.785Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T18:42:55.784Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T18:42:55.058Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T18:42:55.057Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
     "time": "2026-09-08T17:54:34.286Z",
     "msg": "HTTP 402 issued — requestId: 2883f0db-a71c-4698-8421-ec55ee1365cc — amount: 0.01 USDC"
   },
@@ -218,185 +398,5 @@
   {
     "time": "2026-09-08T16:13:04.863Z",
     "msg": "Payment VERIFIED — releasing report for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:13:04.138Z",
-    "msg": "Payment submitted for requestId: abad684a-e210-4b9e-87a3-5f9de5b30a60 — tx: 0x8e9f33356e7bba059052bc030932d72c5bfabc93e7adca5c0f29e7fcaec7c0d5 on chain: bsc"
-  },
-  {
-    "time": "2026-09-08T16:12:55.098Z",
-    "msg": "HTTP 402 issued — requestId: abad684a-e210-4b9e-87a3-5f9de5b30a60 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T16:12:55.095Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (70%)"
-  },
-  {
-    "time": "2026-09-08T16:12:54.279Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T16:12:54.272Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T14:14:21.209Z",
-    "msg": "Live Mode WS disconnected — token: eb6b0667-145e-4d2c-9502-cabb789236c7"
-  },
-  {
-    "time": "2026-09-08T14:10:34.425Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T14:10:34.165Z",
-    "msg": "Live Mode WS disconnected — token: eb6b0667-145e-4d2c-9502-cabb789236c7"
-  },
-  {
-    "time": "2026-09-08T14:09:07.993Z",
-    "msg": "HTTP 402 issued — requestId: ad4cd194-9883-4644-98fc-9455d54d6825 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T14:09:07.992Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: EXIT (78%)"
-  },
-  {
-    "time": "2026-09-08T14:09:06.785Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T14:09:06.785Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T14:07:46.042Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T14:07:46.028Z",
-    "msg": "Live Mode session created — token: eb6b0667-145e-4d2c-9502-cabb789236c7"
-  },
-  {
-    "time": "2026-09-08T14:07:46.021Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T14:07:45.045Z",
-    "msg": "Live Mode payment submitted — requestId: 2135a395-d35d-4a12-8942-54e37473da20 — tx: 0x265f2cbb44faabf3fb27b74df56112486e11213c1fe45169e73723be7d5a2b06"
-  },
-  {
-    "time": "2026-09-08T14:07:31.726Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: 2135a395-d35d-4a12-8942-54e37473da20 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T14:07:31.725Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:59:03.925Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:59:03.917Z",
-    "msg": "Live Mode session created — token: b5313d23-ad61-4e13-83f2-745dbbdbb03b"
-  },
-  {
-    "time": "2026-09-08T13:59:03.912Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:59:03.305Z",
-    "msg": "Live Mode payment submitted — requestId: ff0dc6f4-66c8-46ea-a7cd-f3206577b105 — tx: 0x0a6b618dbda22d4b4a9de38be8562492af458ebdd890e848b6849be1a44f7e8d"
-  },
-  {
-    "time": "2026-09-08T13:58:36.528Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: ff0dc6f4-66c8-46ea-a7cd-f3206577b105 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:58:36.528Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:58:35.719Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: 39e92f1b-a692-461c-8a34-67c52cb5f3da — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:58:35.719Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:58:30.916Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: 1620e095-b3fc-491e-bddf-91aea39c8530 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:58:30.916Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:57:35.382Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: 02f92cfe-0448-4050-aa24-d857dbe9ccbe — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:57:35.381Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:57:29.277Z",
-    "msg": "Live Mode WS disconnected — token: 8fd887a5-f0bd-434b-b14a-ed0e064606cc"
-  },
-  {
-    "time": "2026-09-08T13:57:24.992Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:57:24.979Z",
-    "msg": "Live Mode session created — token: 8fd887a5-f0bd-434b-b14a-ed0e064606cc"
-  },
-  {
-    "time": "2026-09-08T13:57:24.974Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:57:24.241Z",
-    "msg": "Live Mode payment submitted — requestId: eda3e990-93a5-4569-9e02-b0b8e1870a41 — tx: 0xf309799187e7c66f845cc6f30cacf708bb81169503e89c39e59cb18c6b252b9a"
-  },
-  {
-    "time": "2026-09-08T13:57:06.911Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: eda3e990-93a5-4569-9e02-b0b8e1870a41 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:57:06.903Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:37:03.937Z",
-    "msg": "Live Mode WS disconnected — token: 738ba91c-e7ed-4314-bc06-5b4cceb56c93"
-  },
-  {
-    "time": "2026-09-08T13:32:35.594Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:32:35.578Z",
-    "msg": "Live Mode session created — token: 738ba91c-e7ed-4314-bc06-5b4cceb56c93"
-  },
-  {
-    "time": "2026-09-08T13:32:35.572Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:32:34.988Z",
-    "msg": "Live Mode payment submitted — requestId: dd7f38b6-97b3-4c2b-aebb-f97dfc2218f6 — tx: 0x4553ca19074440e48c3968bc7ab4f51ece261c46f51ad0783c67de4323ed11e2"
-  },
-  {
-    "time": "2026-09-08T13:32:23.713Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: dd7f38b6-97b3-4c2b-aebb-f97dfc2218f6 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T13:32:23.712Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T13:22:25.950Z",
-    "msg": "Live Mode session created — token: adcb3026-a670-4270-9026-abe0db630db3"
   }
 ]
