@@ -1,0 +1,191 @@
+{
+  "currentBalance": 0.51,
+  "totalEarned": 0.51,
+  "transactions": [
+    {
+      "id": 23,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x2947c2d20777e8d49e6a452e389c8077a4c3657f4b931598175db383ca90dade",
+      "timestamp": "2026-09-08T17:14:22.411Z"
+    },
+    {
+      "id": 22,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0xd0aca791740098b914a532b881bef91aea08942e02ae59d4ed743efa27c95526",
+      "timestamp": "2026-09-08T17:12:45.573Z"
+    },
+    {
+      "id": 21,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x70ffaf58508d42d53537845974777ed6241049a24f982110bdeba31620d0c831",
+      "timestamp": "2026-09-08T16:29:34.784Z"
+    },
+    {
+      "id": 20,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x4978e5208c8ce54f87eb6d4d87be9052fbbaeedd07bb5a27c37e49919e340a5d",
+      "timestamp": "2026-09-08T16:28:47.038Z"
+    },
+    {
+      "id": 19,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x849d3b4b8ba8e8bf62536375cd5856dbd46792ec06e7fdc05d0ae83eb1760067",
+      "timestamp": "2026-09-08T16:15:37.099Z"
+    },
+    {
+      "id": 18,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x8e9f33356e7bba059052bc030932d72c5bfabc93e7adca5c0f29e7fcaec7c0d5",
+      "timestamp": "2026-09-08T16:13:04.872Z"
+    },
+    {
+      "id": 17,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x265f2cbb44faabf3fb27b74df56112486e11213c1fe45169e73723be7d5a2b06",
+      "timestamp": "2026-09-08T14:07:46.023Z"
+    },
+    {
+      "id": 16,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x0a6b618dbda22d4b4a9de38be8562492af458ebdd890e848b6849be1a44f7e8d",
+      "timestamp": "2026-09-08T13:59:03.914Z"
+    },
+    {
+      "id": 15,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0xf309799187e7c66f845cc6f30cacf708bb81169503e89c39e59cb18c6b252b9a",
+      "timestamp": "2026-09-08T13:57:24.977Z"
+    },
+    {
+      "id": 14,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x4553ca19074440e48c3968bc7ab4f51ece261c46f51ad0783c67de4323ed11e2",
+      "timestamp": "2026-09-08T13:32:35.576Z"
+    },
+    {
+      "id": 13,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.05,
+      "txHash": "0x039a4f5cc8d383774da42721ad0802205b2487a1b8e41a00d0fbeef29e08bbda",
+      "timestamp": "2026-09-08T13:22:25.949Z"
+    },
+    {
+      "id": 12,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x4505bf7f2f335eda70a19860c05f962c7e1a11c9ddb5acb03a4d8c907503418d",
+      "timestamp": "2026-09-08T13:21:56.182Z"
+    },
+    {
+      "id": 11,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x01a808914929bd7e7a4df4fdbbee7c464b081b62a9eb02bcc3877ef4650c7336",
+      "timestamp": "2026-09-08T12:04:43.667Z"
+    },
+    {
+      "id": 10,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x650d22d9d353838473184053b08092608ebb1e4dbd113390790c994734d7a0b2",
+      "timestamp": "2026-09-08T12:01:15.863Z"
+    },
+    {
+      "id": 9,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x2832dcddab803e907555c05c0ec506503bb4e652277be3ef260d4b0e459ed3c0",
+      "timestamp": "2026-09-08T10:00:35.598Z"
+    },
+    {
+      "id": 8,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0xa4f164f9d89409373af5791b1fba28989600eab1e3658648a42e8e333b9969be",
+      "timestamp": "2026-09-08T04:22:20.074Z"
+    },
+    {
+      "id": 7,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x996394b7b658cc27aaf7df29155dd9fc597fe5d564f0cab45af1dab26502d7f4",
+      "timestamp": "2026-09-07T21:11:38.491Z"
+    },
+    {
+      "id": 6,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0xc9966ce70edd8625057effdb83e5de275ea2182134d258ea5215589804d00cd5",
+      "timestamp": "2026-09-07T20:57:59.051Z"
+    },
+    {
+      "id": 5,
+      "type": "EARN",
+      "symbol": "BTCUSDT",
+      "amount": 0.01,
+      "txHash": "0xf15ef8fc94255d1bbf7a50fabf8d7fd04476570184629d4ecde8757d455a0551",
+      "timestamp": "2026-09-07T20:53:09.666Z"
+    },
+    {
+      "id": 4,
+      "type": "EARN",
+      "symbol": "SOLUSDT",
+      "amount": 0.01,
+      "txHash": "0x88b8d33065253f931ade3ddb254aee4482f91e88a2b28a1b37bfdaafb765ec8d",
+      "timestamp": "2026-09-07T20:49:27.471Z"
+    },
+    {
+      "id": 3,
+      "type": "EARN",
+      "symbol": "BTCUSDT",
+      "amount": 0.01,
+      "txHash": "0x043258798956ae4c92660291ec191ee72f4327fd977474699756bca9d4839a8e",
+      "timestamp": "2026-09-07T20:22:48.721Z"
+    },
+    {
+      "id": 2,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x1df9dced905fb9cc7b8ffb5940eaf30e5fe05946feaf08b672878e34aad896af",
+      "timestamp": "2026-09-07T16:12:45.982Z"
+    },
+    {
+      "id": 1,
+      "type": "EARN",
+      "symbol": "ETHUSDT",
+      "amount": 0.01,
+      "txHash": "0x67f53a97f8e2548a4dd7dc4f0bda86dd7349156ab9d7365ea14c531165476e32",
+      "timestamp": "2026-09-07T12:12:24.785Z"
+    }
+  ],
+  "reinvestments": []
+}
