@@ -267,6 +267,7 @@ async function checkStatus() {
 
 // ── REQUEST ANALYSIS ──────────────────────────────────────────────
 async function requestAnalysis() {
+  isLiveMode = false;
   const symbol = (document.getElementById('symbol-input').value || 'ETHUSDT').trim().toUpperCase();
   const btn    = document.getElementById('analyze-btn');
 
