@@ -1,8 +1,10 @@
 import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { createMCPClient } from './agent.js';
+import path from 'path';
+import os from 'os';
 
-const LEDGER_PATH = './ledger.json';
+const LEDGER_PATH = process.env.VERCEL ? path.join(os.tmpdir(), 'ledger.json') : './ledger.json';
 
 // ── LEDGER HELPERS ──────────────────────────────────────────────
 async function readLedger() {
