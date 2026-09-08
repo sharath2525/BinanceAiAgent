@@ -1,5 +1,213 @@
 [
   {
+    "time": "2026-09-08T19:57:54.007Z",
+    "msg": "Live Mode WS disconnected — token: 6734032c-406f-44fb-bb50-aa6b439bf538"
+  },
+  {
+    "time": "2026-09-08T19:56:58.589Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:56:58.583Z",
+    "msg": "Live Mode session created — token: 6734032c-406f-44fb-bb50-aa6b439bf538"
+  },
+  {
+    "time": "2026-09-08T19:56:58.578Z",
+    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:56:57.998Z",
+    "msg": "Live Mode payment submitted — requestId: 18a4cc58-f6b9-49e8-8840-59a68b63641a — tx: 0x226d374211c662c05207bcdcb8e5c2c8ceae2269c41e28b6d0675f6d603d867e"
+  },
+  {
+    "time": "2026-09-08T19:56:43.299Z",
+    "msg": "HTTP 402 issued for Live Mode — requestId: 18a4cc58-f6b9-49e8-8840-59a68b63641a — price: 0.05 USDC"
+  },
+  {
+    "time": "2026-09-08T19:56:43.299Z",
+    "msg": "Live Mode requested — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:56:17.916Z",
+    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:56:17.313Z",
+    "msg": "Payment submitted for requestId: 067efb96-7e07-4066-9f1c-afc60c3c01b6 — tx: 0x429cfc42fb7a959a185d49e7239710d3c72967bf19f7b683cf8e154258b3f75e on chain: bsc"
+  },
+  {
+    "time": "2026-09-08T19:56:03.775Z",
+    "msg": "HTTP 402 issued — requestId: 067efb96-7e07-4066-9f1c-afc60c3c01b6 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:56:03.774Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (40%)"
+  },
+  {
+    "time": "2026-09-08T19:56:03.234Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:56:03.233Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:54:16.600Z",
+    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:54:16.014Z",
+    "msg": "Payment submitted for requestId: 8d80f493-e2be-4511-8c84-dcf7aadef168 — tx: 0xee01fcf819903fe1ca2498563107f820fcf92800d6d8b0366a4df04f7f642b3d on chain: bsc"
+  },
+  {
+    "time": "2026-09-08T19:54:05.677Z",
+    "msg": "HTTP 402 issued — requestId: 8d80f493-e2be-4511-8c84-dcf7aadef168 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:54:05.677Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (50%)"
+  },
+  {
+    "time": "2026-09-08T19:54:05.305Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:54:05.304Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:54:02.220Z",
+    "msg": "Live Mode WS disconnected — token: 7b076e2c-6631-4d88-b92b-5b7ddcd4cdd8"
+  },
+  {
+    "time": "2026-09-08T19:53:58.564Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:53:58.559Z",
+    "msg": "Live Mode session created — token: 7b076e2c-6631-4d88-b92b-5b7ddcd4cdd8"
+  },
+  {
+    "time": "2026-09-08T19:53:58.556Z",
+    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:53:57.905Z",
+    "msg": "Live Mode payment submitted — requestId: c911c9fb-bf3e-4e52-b538-89599b1abba2 — tx: 0xa3a08bc7529a549cbedb95ff13fea33408d3c8371aa2f6f5f102b4ade96c8e69"
+  },
+  {
+    "time": "2026-09-08T19:53:49.558Z",
+    "msg": "HTTP 402 issued for Live Mode — requestId: c911c9fb-bf3e-4e52-b538-89599b1abba2 — price: 0.05 USDC"
+  },
+  {
+    "time": "2026-09-08T19:53:49.558Z",
+    "msg": "Live Mode requested — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:53:38.414Z",
+    "msg": "HTTP 402 issued — requestId: c3d44566-395f-46e5-864e-395c4a121133 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:53:38.414Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
+  },
+  {
+    "time": "2026-09-08T19:53:38.052Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:53:38.052Z",
+    "msg": "Task received: analyze ETHUSDT for client anonymous"
+  },
+  {
+    "time": "2026-09-08T19:53:11.481Z",
+    "msg": "HTTP 402 issued — requestId: 9ffb8994-3f7f-4ada-a525-84ff87600d80 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:53:11.481Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (50%)"
+  },
+  {
+    "time": "2026-09-08T19:53:10.935Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:53:10.934Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:53:02.941Z",
+    "msg": "HTTP 402 issued — requestId: 9d2d7120-ab53-41dc-9900-0916247e229f — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:53:02.940Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (40%)"
+  },
+  {
+    "time": "2026-09-08T19:53:02.411Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:53:02.410Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:53:01.621Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:53:01.620Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
+    "time": "2026-09-08T19:39:48.473Z",
+    "msg": "Live Mode WS connected — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:39:48.463Z",
+    "msg": "Live Mode session created — token: c4b4a37a-76b6-4eb6-b1ac-546e233d40f7"
+  },
+  {
+    "time": "2026-09-08T19:39:48.457Z",
+    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:39:47.803Z",
+    "msg": "Live Mode payment submitted — requestId: fda18ae1-aafa-47ac-bc26-8ff45924ba2f — tx: 0x29b7b0eabd4eae06b85816c324a6ff3f2e510cf6b4664bcc54211485d6eba4a3"
+  },
+  {
+    "time": "2026-09-08T19:39:35.369Z",
+    "msg": "HTTP 402 issued for Live Mode — requestId: fda18ae1-aafa-47ac-bc26-8ff45924ba2f — price: 0.05 USDC"
+  },
+  {
+    "time": "2026-09-08T19:39:35.369Z",
+    "msg": "Live Mode requested — symbol: ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:39:15.483Z",
+    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
+  },
+  {
+    "time": "2026-09-08T19:39:14.854Z",
+    "msg": "Payment submitted for requestId: b6d64479-54ee-4384-afd5-2d60687ae029 — tx: 0x65c6752fe2febd1081a092bbaeb78530045a99106f99d62610fc29152dc5855d on chain: bsc"
+  },
+  {
+    "time": "2026-09-08T19:38:51.910Z",
+    "msg": "HTTP 402 issued — requestId: b6d64479-54ee-4384-afd5-2d60687ae029 — amount: 0.01 USDC"
+  },
+  {
+    "time": "2026-09-08T19:38:51.908Z",
+    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
+  },
+  {
+    "time": "2026-09-08T19:38:51.298Z",
+    "msg": "Connecting to Binance MCP for ETHUSDT..."
+  },
+  {
+    "time": "2026-09-08T19:38:51.298Z",
+    "msg": "Task received: analyze ETHUSDT for client 0x510e0f207606e653cffac30a6c42b1465b3ef238"
+  },
+  {
     "time": "2026-09-08T19:33:05.044Z",
     "msg": "Live Mode WS disconnected — token: 743fae98-6053-4949-adfd-195a7c6b5b1b"
   },
@@ -190,213 +398,5 @@
   {
     "time": "2026-09-08T17:54:33.767Z",
     "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T17:54:33.764Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T17:41:43.395Z",
-    "msg": "HTTP 402 issued — requestId: d51bf54a-8282-4e3d-a8a2-5ff1ed1ff5aa — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T17:41:43.395Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (40%)"
-  },
-  {
-    "time": "2026-09-08T17:41:42.625Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T17:41:42.624Z",
-    "msg": "Task received: analyze ETHUSDT for client anonymous"
-  },
-  {
-    "time": "2026-09-08T17:39:41.327Z",
-    "msg": "HTTP 402 issued — requestId: 735e0a1a-4621-4423-ac58-b885df202871 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T17:39:41.322Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
-  },
-  {
-    "time": "2026-09-08T17:39:40.793Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T17:39:40.788Z",
-    "msg": "Task received: analyze ETHUSDT for client anonymous"
-  },
-  {
-    "time": "2026-09-08T17:29:22.642Z",
-    "msg": "Live Mode WS disconnected — token: c7ce2dcc-0bb8-4959-baef-ed27defc6be3"
-  },
-  {
-    "time": "2026-09-08T17:14:22.423Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T17:14:22.413Z",
-    "msg": "Live Mode session created — token: c7ce2dcc-0bb8-4959-baef-ed27defc6be3"
-  },
-  {
-    "time": "2026-09-08T17:14:22.409Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T17:14:21.592Z",
-    "msg": "Live Mode payment submitted — requestId: 516f1b63-9eee-46ae-8d3a-7afef54f7b25 — tx: 0x2947c2d20777e8d49e6a452e389c8077a4c3657f4b931598175db383ca90dade"
-  },
-  {
-    "time": "2026-09-08T17:13:38.790Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: 516f1b63-9eee-46ae-8d3a-7afef54f7b25 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T17:13:38.790Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T17:12:45.572Z",
-    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T17:12:44.893Z",
-    "msg": "Payment submitted for requestId: b1953e04-78eb-45b5-8311-fb137e27badb — tx: 0xd0aca791740098b914a532b881bef91aea08942e02ae59d4ed743efa27c95526 on chain: bsc"
-  },
-  {
-    "time": "2026-09-08T17:12:32.698Z",
-    "msg": "HTTP 402 issued — requestId: b1953e04-78eb-45b5-8311-fb137e27badb — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T17:12:32.698Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (40%)"
-  },
-  {
-    "time": "2026-09-08T17:12:32.305Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T17:12:32.305Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T17:12:10.405Z",
-    "msg": "HTTP 402 issued — requestId: bada2128-35a9-4d7b-b95a-15ee5913a2b5 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T17:12:10.402Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (60%)"
-  },
-  {
-    "time": "2026-09-08T17:12:09.884Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T17:12:09.879Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T16:44:35.215Z",
-    "msg": "Live Mode WS disconnected — token: 8fd32b21-7ce2-4ae1-aa61-70ee4b98e284"
-  },
-  {
-    "time": "2026-09-08T16:41:49.863Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:41:49.739Z",
-    "msg": "Live Mode WS disconnected — token: 8fd32b21-7ce2-4ae1-aa61-70ee4b98e284"
-  },
-  {
-    "time": "2026-09-08T16:41:29.128Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:41:28.990Z",
-    "msg": "Live Mode WS disconnected — token: 8fd32b21-7ce2-4ae1-aa61-70ee4b98e284"
-  },
-  {
-    "time": "2026-09-08T16:40:16.318Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:40:15.790Z",
-    "msg": "Live Mode WS disconnected — token: 8fd32b21-7ce2-4ae1-aa61-70ee4b98e284"
-  },
-  {
-    "time": "2026-09-08T16:29:34.806Z",
-    "msg": "Live Mode WS connected — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:29:34.786Z",
-    "msg": "Live Mode session created — token: 8fd32b21-7ce2-4ae1-aa61-70ee4b98e284"
-  },
-  {
-    "time": "2026-09-08T16:29:34.782Z",
-    "msg": "Live Mode payment VERIFIED — creating session for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:29:34.314Z",
-    "msg": "Live Mode payment submitted — requestId: f52343ee-90c9-4c3e-9cca-b40b7b8ccb39 — tx: 0x70ffaf58508d42d53537845974777ed6241049a24f982110bdeba31620d0c831"
-  },
-  {
-    "time": "2026-09-08T16:29:11.720Z",
-    "msg": "HTTP 402 issued for Live Mode — requestId: f52343ee-90c9-4c3e-9cca-b40b7b8ccb39 — price: 0.05 USDC"
-  },
-  {
-    "time": "2026-09-08T16:29:11.720Z",
-    "msg": "Live Mode requested — symbol: ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:28:47.037Z",
-    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:28:46.325Z",
-    "msg": "Payment submitted for requestId: 9fdf341f-0b4e-4a2c-9533-e9f29fe317b7 — tx: 0x4978e5208c8ce54f87eb6d4d87be9052fbbaeedd07bb5a27c37e49919e340a5d on chain: bsc"
-  },
-  {
-    "time": "2026-09-08T16:26:56.748Z",
-    "msg": "HTTP 402 issued — requestId: 9fdf341f-0b4e-4a2c-9533-e9f29fe317b7 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T16:26:56.747Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: HOLD (70%)"
-  },
-  {
-    "time": "2026-09-08T16:26:54.845Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T16:26:54.842Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T16:15:36.993Z",
-    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
-  },
-  {
-    "time": "2026-09-08T16:15:36.147Z",
-    "msg": "Payment submitted for requestId: 75be5cd0-0175-44ed-9fb1-719bdbde8ca3 — tx: 0x849d3b4b8ba8e8bf62536375cd5856dbd46792ec06e7fdc05d0ae83eb1760067 on chain: bsc"
-  },
-  {
-    "time": "2026-09-08T16:15:14.771Z",
-    "msg": "HTTP 402 issued — requestId: 75be5cd0-0175-44ed-9fb1-719bdbde8ca3 — amount: 0.01 USDC"
-  },
-  {
-    "time": "2026-09-08T16:15:14.771Z",
-    "msg": "Analysis complete for ETHUSDT — verdict: EXIT (78%)"
-  },
-  {
-    "time": "2026-09-08T16:15:13.715Z",
-    "msg": "Connecting to Binance MCP for ETHUSDT..."
-  },
-  {
-    "time": "2026-09-08T16:15:13.715Z",
-    "msg": "Task received: analyze ETHUSDT for client 0xd995d0c31802a8d95c163f875ffefb40ab964ed6"
-  },
-  {
-    "time": "2026-09-08T16:13:04.863Z",
-    "msg": "Payment VERIFIED — releasing report for ETHUSDT"
   }
 ]
