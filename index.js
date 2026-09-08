@@ -53,7 +53,7 @@ app.post('/analyze', async (req, res) => {
 
     // Generate unique request ID and store report
     const requestId = randomUUID();
-    const expiresAt = new Date(Date.now() + parseInt(process.env.PAYMENT_TIMEOUT_SECONDS) * 1000);
+    const expiresAt = new Date(Date.now() + parseInt(process.env.PAYMENT_TIMEOUT_SECONDS || 300) * 1000);
     const price = report.pricing?.price || parseFloat(process.env.ANALYSIS_PRICE_USDC || '0.01');
     pendingReports.set(requestId, { report, symbol, expiresAt, clientWallet, price });
 
