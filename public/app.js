@@ -670,46 +670,33 @@ function resetAnalyzer() {
 // ── WALLET TAB ────────────────────────────────────────────────────
 async function refreshWallet() {
   try {
-    const w = await fetch('/wallet').then(r => r.json());
+    let localWallet = JSON.parse(localStorage.getItem('localWallet') || '{"balance":0,"earned":0,"txCount":0,"txs":[]}');
     
-    // Vercel /tmp persistence hack for the demo
-    let localWallet = JSON.parse(localStorage.getItem('localWallet') || '{"balance":0,"earned":0,"txCount":0}');
-    if (parseFloat(w.currentBalance) > localWallet.balance) {
-       localWallet.balance = parseFloat(w.currentBalance);
-       localWallet.earned = parseFloat(w.totalEarned);
-       localWallet.txCount = w.transactionCount;
-       localStorage.setItem('localWallet', JSON.stringify(localWallet));
-    }
-    
-    // Use Math.max to prevent balance dropping to 0 when Vercel serverless container restarts
-    const displayBalance = Math.max(parseFloat(w.currentBalance), localWallet.balance).toFixed(6);
-    const displayEarned  = Math.max(parseFloat(w.totalEarned), localWallet.earned).toFixed(6);
-    const displayTxCount = Math.max(w.transactionCount, localWallet.txCount);
+    const displayBalance = localWallet.balance.toFixed(6);
+    const displayEarned  = localWallet.earned.toFixed(6);
+    const displayTxCount = localWallet.txCount;
 
     setText('w-balance',      displayBalance);
     setText('w-total',        displayEarned);
     setText('w-txcount',      displayTxCount);
     
-    // Header update
     const headerEl = document.getElementById('header-agent-status');
     if (headerEl) {
       headerEl.innerHTML = `<span class="status-indicator online"></span> Online — ${displayEarned} USDC earned`;
     }
 
-    const t = parseFloat(w.reinvestThreshold || 10);
+    const t = 10; // threshold
     const progress = Math.min((localWallet.balance / t * 100), 100).toFixed(1);
     setText('w-progress',     `${progress}%`);
     
     const bar = document.getElementById('w-progress-bar');
     if (bar) bar.style.width = `${progress}%`;
 
-    setText('w-reinvcount',   w.reinvestmentCount);
-
     const ledger = document.getElementById('tx-ledger');
     if (ledger) {
-      if (w.recentTransactions && w.recentTransactions.length > 0) {
-        ledger.innerHTML = w.recentTransactions.map(tx => {
-          const ts    = tx.timestamp ? new Date(tx.timestamp).toLocaleTimeString() : '—';
+      if (localWallet.txs && localWallet.txs.length > 0) {
+        ledger.innerHTML = localWallet.txs.slice(0, 10).map(tx => {
+          const ts = new Date(tx.timestamp).toLocaleTimeString();
           return `<div class="tx-row">
             <div>
               <span class="tx-id">TX-${tx.id}</span>
