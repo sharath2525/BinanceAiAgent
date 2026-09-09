@@ -141,8 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.ethereum.on('chainChanged', () => window.location.reload());
   }
 
+
   refreshWallet();
+
+  // Restore cached report if it exists
+  const cachedReport = localStorage.getItem('cachedReport');
+  if (cachedReport) {
+    try { showReport(JSON.parse(cachedReport)); } catch (e) {}
+  }
 });
+
 
 // ── CHAIN GRID ────────────────────────────────────────────────────
 function buildChainGrid() {
@@ -472,7 +480,8 @@ async function verifyAndUnlock(txHash, chainKey) {
       if (isLiveMode && data.session) {
          startLiveSession(data.session);
       } else if (data.report) {
-         showReport(data.report);
+         localStorage.setItem('cachedReport', JSON.stringify(data.report));
+          showReport(data.report);
       } else {
          showError('Payment verified, but missing data');
          return;
@@ -662,45 +671,51 @@ function resetAnalyzer() {
 async function refreshWallet() {
   try {
     const w = await fetch('/wallet').then(r => r.json());
-    setText('w-balance',      w.currentBalance);
-    setText('w-total',        w.totalEarned);
-    setText('w-txcount',      w.transactionCount);
-    setText('w-reinvestcount', w.reinvestmentCount || 0);
-    setText('w-progress',     w.progressToReinvest);
-    const fill = document.getElementById('progress-fill');
-    if (fill) fill.style.width = w.progressToReinvest;
+    
+    // Vercel /tmp persistence hack for the demo
+    let localWallet = JSON.parse(localStorage.getItem('localWallet') || '{"balance":0,"earned":0,"txCount":0}');
+    if (parseFloat(w.currentBalance) > localWallet.balance) {
+       localWallet.balance = parseFloat(w.currentBalance);
+       localWallet.earned = parseFloat(w.totalEarned);
+       localWallet.txCount = w.transactionCount;
+       localStorage.setItem('localWallet', JSON.stringify(localWallet));
+    }
+    
+    // Use Math.max to prevent balance dropping to 0 when Vercel serverless container restarts
+    const displayBalance = Math.max(parseFloat(w.currentBalance), localWallet.balance).toFixed(6);
+    const displayEarned  = Math.max(parseFloat(w.totalEarned), localWallet.earned).toFixed(6);
+    const displayTxCount = Math.max(w.transactionCount, localWallet.txCount);
+
+    setText('w-balance',      displayBalance);
+    setText('w-total',        displayEarned);
+    setText('w-txcount',      displayTxCount);
+    
+    // Header update
+    const headerEl = document.getElementById('header-agent-status');
+    if (headerEl) {
+      headerEl.innerHTML = `<span class="status-indicator online"></span> Online — ${displayEarned} USDC earned`;
+    }
+
+    const t = parseFloat(w.reinvestThreshold || 10);
+    const progress = Math.min((localWallet.balance / t * 100), 100).toFixed(1);
+    setText('w-progress',     `${progress}%`);
+    
+    const bar = document.getElementById('w-progress-bar');
+    if (bar) bar.style.width = `${progress}%`;
+
+    setText('w-reinvcount',   w.reinvestmentCount);
 
     const ledger = document.getElementById('tx-ledger');
     if (ledger) {
-      if (!w.recentTransactions?.length) {
-        ledger.innerHTML = '<p class="empty-msg">No transactions yet.</p>';
-      } else {
+      if (w.recentTransactions && w.recentTransactions.length > 0) {
         ledger.innerHTML = w.recentTransactions.map(tx => {
-          const earn  = tx.type === 'EARN';
-          const amt   = earn ? `+${tx.amount.toFixed(6)}` : `${tx.amount.toFixed(6)}`;
           const ts    = tx.timestamp ? new Date(tx.timestamp).toLocaleTimeString() : '—';
           return `<div class="tx-row">
-            <span class="tx-type ${tx.type}">${tx.type}</span>
-            <span class="tx-symbol">${tx.symbol || '—'}</span>
-            <span class="tx-time">${ts}</span>
-            <span class="tx-amount ${earn?'earn':'spend'}">${amt} USDC</span>
-          </div>`;
-        }).join('');
-      }
-    }
-
-    const rh = document.getElementById('reinvest-history');
-    if (rh) {
-      if (!w.recentReinvestments?.length) {
-        rh.innerHTML = '<p class="empty-msg">No reinvestments yet.</p>';
-      } else {
-        rh.innerHTML = w.recentReinvestments.map(r => {
-          const ts = r.timestamp ? new Date(r.timestamp).toLocaleTimeString() : '—';
-          return `<div class="tx-row">
-            <span class="tx-type REINVEST">BNB BUY</span>
-            <span class="tx-symbol">${r.bnbBought} BNB @ $${r.bnbPrice}</span>
-            <span class="tx-time">${ts}</span>
-            <span class="tx-amount spend">-$${r.usdcSpent}</span>
+            <div>
+              <span class="tx-id">TX-${tx.id}</span>
+              <span class="tx-time">${ts}</span>
+            </div>
+            <span class="tx-amt">+${tx.amount} USDC</span>
           </div>`;
         }).join('');
       }
@@ -708,7 +723,7 @@ async function refreshWallet() {
   } catch (err) { console.error('Wallet refresh:', err.message); }
 }
 
-// ── ACTIVITY LOG ──────────────────────────────────────────────────
+  // ── ACTIVITY LOG ──────────────────────────────────────────────────
 async function refreshLog() {
   try {
     const { log } = await fetch('/log').then(r => r.json());
