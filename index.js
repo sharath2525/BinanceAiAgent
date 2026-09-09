@@ -83,12 +83,17 @@ app.post('/pay', async (req, res) => {
     return res.status(400).json({ error: 'requestId and txHash are required' });
   }
 
-  const pending = pendingReports.get(requestId);
+  let pending = pendingReports.get(requestId);
+  
+  // Vercel stateless fallback: if memory wiped, reconstruct the request from the frontend payload
   if (!pending) {
-    return res.status(404).json({ error: 'Request not found or already delivered' });
-  }
-
-  if (new Date() > pending.expiresAt) {
+    log(`[Stateless Vercel] Reconstructing pending request for ${req.body.symbol}`);
+    pending = {
+      symbol: req.body.symbol || 'ETHUSDT',
+      price: req.body.price || process.env.ANALYSIS_PRICE_USDC || '0.01',
+      expiresAt: new Date(Date.now() + 100000000) // bypass expiration
+    };
+  } else if (new Date() > pending.expiresAt) {
     pendingReports.delete(requestId);
     return res.status(410).json({ error: 'Invoice expired. Please request a new analysis.' });
   }
@@ -191,9 +196,17 @@ app.post('/live-pay', async (req, res) => {
   const { requestId, txHash, chain } = req.body;
   if (!requestId || !txHash) return res.status(400).json({ error: 'requestId and txHash are required' });
 
-  const pending = pendingReports.get(`live_${requestId}`);
-  if (!pending) return res.status(404).json({ error: 'Live Mode request not found or expired' });
-  if (new Date() > pending.expiresAt) {
+  let pending = pendingReports.get(`live_${requestId}`);
+  
+  // Vercel stateless fallback for Live Mode
+  if (!pending) {
+    log(`[Stateless Vercel] Reconstructing Live pending request for ${req.body.symbol}`);
+    pending = {
+      symbol: req.body.symbol || 'ETHUSDT',
+      price: req.body.price || process.env.LIVE_MODE_PRICE_USDC || '0.05',
+      expiresAt: new Date(Date.now() + 100000000)
+    };
+  } else if (new Date() > pending.expiresAt) {
     pendingReports.delete(`live_${requestId}`);
     return res.status(410).json({ error: 'Invoice expired.' });
   }
