@@ -670,33 +670,30 @@ function resetAnalyzer() {
 // ── WALLET TAB ────────────────────────────────────────────────────
 async function refreshWallet() {
   try {
-    let localWallet = JSON.parse(localStorage.getItem('localWallet') || '{"balance":0,"earned":0,"txCount":0,"txs":[]}');
+    const w = await fetch('/wallet').then(r => r.json());
     
-    const displayBalance = localWallet.balance.toFixed(6);
-    const displayEarned  = localWallet.earned.toFixed(6);
-    const displayTxCount = localWallet.txCount;
-
-    setText('w-balance',      displayBalance);
-    setText('w-total',        displayEarned);
-    setText('w-txcount',      displayTxCount);
+    setText('w-balance',      w.currentBalance);
+    setText('w-total',        w.totalEarned);
+    setText('w-txcount',      w.transactionCount);
     
+    // Header update
     const headerEl = document.getElementById('header-agent-status');
     if (headerEl) {
-      headerEl.innerHTML = `<span class="status-indicator online"></span> Online — ${displayEarned} USDC earned`;
+      headerEl.innerHTML = `<span class="status-indicator online"></span> Online — ${w.totalEarned} USDC earned`;
     }
 
-    const t = 10; // threshold
-    const progress = Math.min((localWallet.balance / t * 100), 100).toFixed(1);
-    setText('w-progress',     `${progress}%`);
+    setText('w-progress',     w.progressToReinvest);
     
     const bar = document.getElementById('w-progress-bar');
-    if (bar) bar.style.width = `${progress}%`;
+    if (bar) bar.style.width = w.progressToReinvest;
+
+    setText('w-reinvcount',   w.reinvestmentCount);
 
     const ledger = document.getElementById('tx-ledger');
     if (ledger) {
-      if (localWallet.txs && localWallet.txs.length > 0) {
-        ledger.innerHTML = localWallet.txs.slice(0, 10).map(tx => {
-          const ts = new Date(tx.timestamp).toLocaleTimeString();
+      if (w.recentTransactions && w.recentTransactions.length > 0) {
+        ledger.innerHTML = w.recentTransactions.map(tx => {
+          const ts    = tx.timestamp ? new Date(tx.timestamp).toLocaleTimeString() : '—';
           return `<div class="tx-row">
             <div>
               <span class="tx-id">TX-${tx.id}</span>
@@ -705,6 +702,21 @@ async function refreshWallet() {
             <span class="tx-amt">+${tx.amount} USDC</span>
           </div>`;
         }).join('');
+      } else {
+        // Fallback to local storage txs if Vercel backend wiped them
+        let localWallet = JSON.parse(localStorage.getItem('localWallet') || '{"txs":[]}');
+        if (localWallet.txs && localWallet.txs.length > 0) {
+           ledger.innerHTML = localWallet.txs.slice(0, 10).map(tx => {
+             const ts = new Date(tx.timestamp).toLocaleTimeString();
+             return `<div class="tx-row">
+               <div>
+                 <span class="tx-id">TX-${tx.id}</span>
+                 <span class="tx-time">${ts}</span>
+               </div>
+               <span class="tx-amt">+${tx.amount} USDC</span>
+             </div>`;
+           }).join('');
+        }
       }
     }
   } catch (err) { console.error('Wallet refresh:', err.message); }

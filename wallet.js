@@ -3,6 +3,8 @@ import { existsSync } from 'fs';
 import { createMCPClient } from './agent.js';
 import path from 'path';
 import os from 'os';
+import { ethers } from 'ethers';
+import { SUPPORTED_CHAINS } from './payment.js';
 
 const LEDGER_PATH = process.env.VERCEL ? path.join(os.tmpdir(), 'ledger.json') : './ledger.json';
 
@@ -41,9 +43,31 @@ export async function logEarning(symbol, amount, txHash) {
 export async function getWalletStatus() {
   const ledger    = await readLedger();
   const threshold = parseFloat(process.env.BNB_REINVEST_THRESHOLD);
+  const agentWallet = process.env.AGENT_WALLET_ADDRESS;
+  
+  // 1. Get true on-chain balance from BNB Chain
+  let realBalance = ledger.currentBalance;
+  try {
+    const chain = SUPPORTED_CHAINS['bsc'];
+    const rpc = process.env[chain.rpcEnv] || chain.defaultRpc;
+    const provider = new ethers.JsonRpcProvider(rpc);
+    const usdc = new ethers.Contract(chain.usdc, ["function balanceOf(address owner) view returns (uint256)"], provider);
+    const balanceWei = await usdc.balanceOf(agentWallet);
+    realBalance = parseFloat(ethers.formatUnits(balanceWei, chain.decimals));
+    
+    // Sync the local ledger with reality if it fell behind (due to Vercel statelessness)
+    if (realBalance > ledger.currentBalance) {
+       ledger.currentBalance = realBalance;
+       if (realBalance > ledger.totalEarned) ledger.totalEarned = realBalance;
+       await writeLedger(ledger);
+    }
+  } catch(e) {
+    console.error("Failed to fetch on-chain balance:", e.message);
+  }
+
   return {
-    agentWallet:          process.env.AGENT_WALLET_ADDRESS,
-    currentBalance:       ledger.currentBalance.toFixed(6),
+    agentWallet:          agentWallet,
+    currentBalance:       realBalance.toFixed(6),
     totalEarned:          ledger.totalEarned.toFixed(6),
     reinvestThreshold:    threshold,
     progressToReinvest:   `${Math.min((ledger.currentBalance / threshold * 100), 100).toFixed(1)}%`,
