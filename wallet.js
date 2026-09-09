@@ -42,7 +42,7 @@ export async function logEarning(symbol, amount, txHash) {
 // ── GET WALLET STATUS ───────────────────────────────────────────
 export async function getWalletStatus() {
   const ledger    = await readLedger();
-  const threshold = parseFloat(process.env.BNB_REINVEST_THRESHOLD);
+  const threshold = parseFloat(process.env.BNB_REINVEST_THRESHOLD || 10);
   const agentWallet = process.env.AGENT_WALLET_ADDRESS;
   
   // 1. Get true on-chain balance from BNB Chain
@@ -82,7 +82,7 @@ export async function getWalletStatus() {
 // When balance >= threshold, buy BNB on Binance Spot via MCP
 export async function checkAndReinvest(logFn = console.log) {
   const ledger    = await readLedger();
-  const threshold = parseFloat(process.env.BNB_REINVEST_THRESHOLD);
+  const threshold = parseFloat(process.env.BNB_REINVEST_THRESHOLD || 10);
   const reserve   = 2; // Always keep $2 USDC as reserve
 
   if (ledger.currentBalance < threshold) return false;

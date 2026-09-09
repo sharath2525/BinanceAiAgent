@@ -111,7 +111,7 @@ app.post('/pay', async (req, res) => {
     log(`Payment VERIFIED — releasing report for ${pending.symbol}`);
 
     // Log earning and check reinvestment threshold
-    await logEarning(pending.symbol, parseFloat(process.env.ANALYSIS_PRICE_USDC), txHash);
+    await logEarning(pending.symbol, parseFloat(pending.price), txHash);
     pendingReports.delete(requestId);
 
     // Check if we hit the reinvest threshold
@@ -227,7 +227,7 @@ app.post('/live-pay', async (req, res) => {
     
     liveSessions.set(sessionToken, { symbol: pending.symbol, expiresAt: sessionExpiry, createdAt: new Date() });
 
-    await logEarning(pending.symbol, pending.price, txHash);
+    await logEarning(pending.symbol, parseFloat(pending.price), txHash);
     pendingReports.delete(`live_${requestId}`);
 
     const reinvested = await checkAndReinvest(log);
